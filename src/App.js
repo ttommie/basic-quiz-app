@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+const questionJSON = require('../src/questions.json');
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { false ? (<div className="totalScore">You scored 1 out of {questionJSON.length}</div>) : 
+      (
+        <>
+          <div className="questionSection">
+            <div className="questionCount">
+              <span>Question 1</span>/{questionJSON.length}
+            </div>
+            <div className="questionText">This is where the question should go</div>
+          </div>
+          <div className="answerSection">
+              <button>Answer 1</button>
+              <button>Answer 2</button>
+              <button>Answer 3</button>
+              <button>Answer 4</button>
+          </div>
+        </>
+      )}
     </div>
   );
 }
